@@ -4,7 +4,7 @@ host_loki="http://172.31.24.210:3100/loki/api/v1/push"
 label="label_portal"
 label_name="monitor-netcat-db"
 
-for ((i=0; ;i++ ))
+for (( ; ; ))
 do 
   succeed="$(nc -vv -z hostdb.rds.com 3306 2>&1 | sed 's/^Connection.*succeeded\!$/success/g')"
   	if [[ $succeed != "success" ]]
